@@ -3,15 +3,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    bottom: 0;
     width: 100%;
     background-image: url('../../../public/assets/grama.png');
     background-size: contain;
 }
 .footer small {
-    margin-top: 65px;
+    position: relative;
+    top: 25%;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.7srem;
     font-weight: bold;
 }
