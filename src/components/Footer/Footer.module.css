@@ -1,0 +1,17 @@
+.footer {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-image: url('../../../public/assets/grama.png');
+    background-size: contain;
+}
+.footer small {
+    margin-top: 65px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
