@@ -32,13 +32,16 @@ function App() {
   }, [escolha])
 
   const next = () => {
-    setEscolha(escolha + 1)
+    if(escolha >= 1010) {
+      alert('Operação inválida!')
+    } else {
+      setEscolha(escolha + 1)
+    }
   }
 
   const previous = () => {
     if(escolha === 1) {
       alert('Operação inválida!')
-      setEscolha(1);
     } else {
       setEscolha(escolha - 1)
     }
@@ -48,7 +51,7 @@ function App() {
   return (
     <>
       <Header/>
-      <Pokedex pokemon ={pokemon} next ={next} previous ={previous}/>
+      <Pokedex pokemon ={pokemon} next ={next} previous ={previous} setEscolha={setEscolha}/>
       <Footer/>
     </>
   )

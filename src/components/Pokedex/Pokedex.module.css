@@ -7,7 +7,6 @@
 
 .pokedexBack {
     width: 100%;
-
     max-width: 405px;
 }
 
@@ -16,6 +15,7 @@
     color: #000;
     top: 54%;
     right: 27%;
+    font-size: 1.4rem;
 }
 .pokemonNumber {
     color: #000;
@@ -36,12 +36,47 @@
     height: 30%;
 }
 
+.pokeSearch {
+    position: absolute;
+    width: 65%;
+    top: 65%;
+    left: 13.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.pokeSearch input {
+    margin-left: 10px;
+    width: 50%;
+    padding: 0.5rem;
+    outline: none;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-weight: 600;
+    color: white;
+    background-color: #444;
+    box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
+}
+
+.pokeSearch button {
+    padding: 0.5rem;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-weight: 600;
+    color: white;
+    background-color: #444;
+    box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
+    cursor: pointer;
+}
+
 .pokeButtons {
     display: flex;
     justify-content: center;
     gap: 20px;
     position: absolute;
-    bottom: 20%;
+    bottom: 15%;
     left: 52%;
     width: 60%;
     transform: translate(-57%, 0);

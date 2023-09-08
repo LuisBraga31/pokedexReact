@@ -1,4 +1,5 @@
 import styles from './Pokedex.module.css';
+import { useState } from 'react'
 
 interface Pokemon {
   id: number;
@@ -6,8 +7,22 @@ interface Pokemon {
   sprites: { front_default: string};
 }
 
-const Pokedex: React.FC<{ pokemon: Pokemon | null, next: () => void, previous: () => void}> = ( { pokemon, next, previous }) => {
+const Pokedex: React.FC<{ 
+      pokemon: Pokemon | null, 
+      next: () => void, 
+      previous: () => void, 
+      setEscolha: React.Dispatch<React.SetStateAction<number>>}> = 
+    ( { pokemon, next, previous, setEscolha }) => {
   
+      const [input, setInput] = useState<number>();
+
+      function insert(ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+        ev.preventDefault();
+        if(typeof(input) === 'number') {
+          setEscolha(input);
+        }
+      }
+      
   return ( 
 
     <main className={styles.main}>
@@ -18,6 +33,16 @@ const Pokedex: React.FC<{ pokemon: Pokemon | null, next: () => void, previous: (
             <span className={styles.pokemonNumber}> {pokemon && pokemon.id} </span> -
             <span className={styles.pokemonName}> {pokemon && pokemon.name} </span>
         </div>
+        
+        <form className={styles.pokeSearch}>
+          <input
+            type="number"
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInput(parseInt(e.target.value))}
+            placeholder="Digite um Número"
+            required
+          />
+          <button onClick={(ev) => insert(ev)}> Buscar </button>
+        </form>
 
         <div className={styles.pokeButtons}>
             <button onClick={previous}> Prev </button>
