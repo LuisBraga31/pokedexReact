@@ -16,7 +16,7 @@ const Pokedex = () => {
             <button> Next </button>
         </div>
 
-        <img src="../../../public/assets/pokedex.png" alt="" className={styles.pokedexBack}/>
+        <img src="../../../assets/pokedex.png" alt="" className={styles.pokedexBack}/>
 
     </main>
   )

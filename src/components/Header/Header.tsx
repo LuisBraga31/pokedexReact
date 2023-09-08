@@ -4,7 +4,7 @@ const Header = () => {
   return (
 
     <header className={styles.header}>
-        <img src="../../../public/assets/logo.png" alt="pokedex" />
+        <img src="../../../assets/logo.png" alt="pokedex" />
     </header>
 
   )
