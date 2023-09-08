@@ -6,7 +6,7 @@ interface Pokemon {
   sprites: { front_default: string};
 }
 
-const Pokedex: React.FC<{ pokemon: Pokemon | null}> = ( { pokemon }) => {
+const Pokedex: React.FC<{ pokemon: Pokemon | null, next: () => void, previous: () => void}> = ( { pokemon, next, previous }) => {
   
   return ( 
 
@@ -20,8 +20,8 @@ const Pokedex: React.FC<{ pokemon: Pokemon | null}> = ( { pokemon }) => {
         </div>
 
         <div className={styles.pokeButtons}>
-            <button> Ant </button>
-            <button> Next </button>
+            <button onClick={previous}> Prev </button>
+            <button onClick={next}> Next </button>
         </div>
 
         <img src="../../../assets/pokedex.png" alt="" className={styles.pokedexBack}/>

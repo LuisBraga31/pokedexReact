@@ -16,14 +16,12 @@ function App() {
   const [escolha, setEscolha] =  useState(1);
   
   useEffect (() => {
-    setEscolha(1);
     
     async function loadPokemon() {
       try {
         const response = await fetch (`https://pokeapi.co/api/v2/pokemon/${escolha}`);
         const pokemonApresentado = await response.json();
         setPokemon(pokemonApresentado);
-        console.log(pokemonApresentado)
       } catch (error: unknown) {
         console.log(error);
       }
@@ -33,11 +31,24 @@ function App() {
 
   }, [escolha])
 
+  const next = () => {
+    setEscolha(escolha + 1)
+  }
+
+  const previous = () => {
+    if(escolha === 1) {
+      alert('Operação inválida!')
+      setEscolha(1);
+    } else {
+      setEscolha(escolha - 1)
+    }
+  }
+
   
   return (
     <>
       <Header/>
-      <Pokedex pokemon ={pokemon} />
+      <Pokedex pokemon ={pokemon} next ={next} previous ={previous}/>
       <Footer/>
     </>
   )
