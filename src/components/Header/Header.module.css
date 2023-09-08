@@ -7,10 +7,11 @@
     align-items: center;
     justify-content: center;
     height: 70px;
-    background-color: #d30a40;
+    background-color:rgba(211,10,64,0.9);
     box-shadow: 0px 0px 8px 2px #000;
 }
 
 .header img {
+    opacity: 1;
     width: 10rem;
 }
