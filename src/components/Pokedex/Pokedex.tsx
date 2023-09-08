@@ -1,14 +1,22 @@
 import styles from './Pokedex.module.css';
 
-const Pokedex = () => {
-  return (
+interface Pokemon {
+  id: number;
+  name: string;
+  sprites: { front_default: string};
+}
+
+const Pokedex: React.FC<{ pokemon: Pokemon | null}> = ( { pokemon }) => {
+  
+  return ( 
+
     <main className={styles.main}>
 
-        <img src="#" alt="pokemon" className={styles.pokemonImage}/>
+        <img src={pokemon ? pokemon.sprites.front_default : '#'} alt="pokemon" className={styles.pokemonImage}/>
 
         <div className={styles.pokemonData}>
-            <span className={styles.pokemonNumber}> 01 </span> -
-            <span className={styles.pokemonName}> Bulbassaur </span>
+            <span className={styles.pokemonNumber}> {pokemon && pokemon.id} </span> -
+            <span className={styles.pokemonName}> {pokemon && pokemon.name} </span>
         </div>
 
         <div className={styles.pokeButtons}>
