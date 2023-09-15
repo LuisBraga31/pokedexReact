@@ -30,10 +30,11 @@
 
 .pokemonImage {
     position: absolute;
-    bottom: 55%;
-    left: 48%;
+    bottom: 51%;
+    left: 50%;
     transform: translate(-58%, 20%);
-    min-height: 12%;
+    min-height: 25%;
+    overflow: hidden;
 }
 
 .pokeSearch {

@@ -7,7 +7,7 @@ import Pokedex from './components/Pokedex/Pokedex'
 interface Pokemon {
   id: number;
   name: string;
-  sprites: { versions: {'generation-v': {'black-white': {'animated': {'front_default': string}}}}} 
+  sprites: { 'front_default': string }; 
 }
 
 function App() {
